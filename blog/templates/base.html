@@ -30,6 +30,9 @@
           </a>
           <span>
             {% if user.is_authenticated %}
+              <a class="navbar-toggler align-items-center" href="{% url 'film_profile' %}" style="margin-right: 20px;">
+                <strong>Films on HoHey</strong>
+              </a>
               <a class="navbar-toggler align-items-center" href="{% url 'profile' %}" style="margin-right: 20px;">
                 <strong>Profile</strong>
               </a>

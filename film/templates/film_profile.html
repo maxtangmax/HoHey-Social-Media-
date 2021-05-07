@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<div class="content-section">
+    <div class="media">
+        
+            <form method="get">
+            	{{myFilter.form}}
+
+        	<button class="btn btn-primary" type="submit">Search Film Profile</button>
+        	<a href="{% url 'film_register' %}"class="btn btn-success" role="button">Create a new film Profile</a>
+            	
+
+        </form>
+
+        
+
+    </div>
+    <div>
+    	<table class="table table-sm">
+				<tr>
+					<th>Film Name</th>
+					<th>Director</th>
+					<th>Producer</th>
+					<th>Year</th>
+					<th>Language</th>
+					<th>Actors</th>
+				</tr>
+
+				{% for film in films %}
+					<tr>
+
+						<td> <a href="{% url 'film-detail' film.id %}">{{film.film_name}} </a></td>
+						<td>{{film.Director}}</td>
+						<td>{{film.Producer}}</td>
+						<td>{{film.Year}}</td>
+						<td>{{film.Language}}</td>
+						<td>{{film.Actors}}</td>
+					</tr>
+				{% endfor %}
+
+			</table>
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.film_image.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.author}}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+      </div>
+      <div>
+      <h2 class="article-title">{{ object.film_name }}</h2>
+      <a href="{% url 'film-update' %}" class="btn btn-success" role="button">Update the film Profile</a>
+      <p class="article-content">{{ object.summary }}</p>
+      </div>
+      <div>
+        <table class="table table-sm">
+          <tr>
+              <th>Year of production</th>
+              <th>Director</th>
+              <th>Producer</th>
+              <th>Writer</th>
+              <th>Editer</th>
+              <th>Language</th>
+              <th>Actors</th>
+          </tr>
+          <tr>
+            <td>{{ object.Year}}</td>
+            <td>{{object.Director}}</td>
+            <td>{{object.Producer}}</td>
+            <td>{{object.Writer}}</td>
+            <td>{{object.Editer}}</td>
+            <td>{{object.Language}}</td>
+            <td>{{object.Actors}}</td>
+          </tr>
+      </div>
+      <div>
+        <table class="table table-sm">
+          <tr>
+              <th>Cinematographer</th>
+              <th>Production Designer</th>
+              <th>Visual effects</th>
+              <th>Costume</th>
+              <th>Casting</th>
+              <th>Music</th>
+              <th>Set direction</th>
+              <th>Studio</th>
+          </tr>
+          <tr>
+            <td>{{ object.Cinematographer}}</td>
+            <td>{{object.Production_Designer}}</td>
+            <td>{{object.Art_Director}}</td>
+            <td>{{object.Visual_effects}}</td>
+            <td>{{object.Costume}}</td>
+            <td>{{object.Casting}}</td>
+            <td>{{object.Music}}</td>
+            <td>{{object.Set_direction}}</td>
+            <td>{{object.Studio}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </article>
+{% endblock content %}
+
